@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SimpleToDoList</string>
+    <string name="action_settings">Setting</string>
+    <string name="add_todo">Add</string>
+    <string name="title">Title</string>
+    <string name="name_todo">Name to do</string>
+    <string name="description_todo">To do description</string>
+    <string name="time_todo">Duration</string>
+    <string name="choose_date">Date</string>
+    <string name="choose_time">Time</string>
+    <string name="done">Done</string>
+    <string name="cancel">cancel</string>
+    <string name="about">Information</string>
+    <string name="language">Language</string>
+    <string name="app_version">Version: 1.0</string>
+    <string name="contact_me">You can contact me by</string>
+    <string name="made_by">Made by Truong Hung</string>
+    <string name="night_mode">Night mode</string>
+    <string name="night_mode_on_summary">Night mode is on</string>
+    <string name="night_mode_off_summary">Night mode is off</string>
+    <string name="email_address" translatable="false">truonghungvatvo@gmail.com</string>
+</resources>

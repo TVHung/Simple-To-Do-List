@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Tiêu đề" />
+        android:text="@string/title" />
 
     <EditText
         android:id="@+id/txtTenCongViec"
@@ -23,7 +23,7 @@
         android:inputType="textPersonName"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="10dp"
-        android:hint="Tên công việc" />
+        android:hint="@string/name_todo" />
 
     <EditText
         android:id="@+id/txtMoTaCongViec"
@@ -31,14 +31,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Mô tả" />
+        android:hint="@string/description_todo" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Thời hạn" />
+        android:text="@string/time_todo" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_weight="9"
-            android:hint="Ngày" />
+            android:hint="@string/choose_date" />
 
         <ImageButton
             android:id="@+id/btnThoiHan"
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_weight="9"
-            android:hint="Thời gian" />
+            android:hint="@string/choose_time" />
 
         <ImageButton
             android:id="@+id/btnThoiGian"
@@ -98,7 +98,7 @@
             android:layout_gravity="left"
             android:gravity="center"
             android:layout_weight="1"
-            android:text="Xong" />
+            android:text="@string/done" />
 
         <Button
             android:id="@+id/btnHuy"
@@ -107,7 +107,7 @@
             android:layout_weight="1"
             android:layout_gravity="right"
             android:onClick="Huy"
-            android:text="Hủy" />
+            android:text="@string/cancel" />
     </LinearLayout>
 
 
