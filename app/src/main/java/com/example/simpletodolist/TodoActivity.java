@@ -1,5 +1,6 @@
 package com.example.simpletodolist;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -24,6 +25,7 @@ public class TodoActivity extends AppCompatActivity {
     TextView txtThoiHan, txtThoiGian;
     ImageButton btnThoiHan, btnThoiGian;
     Button btnXong, btnHuy;
+    int position = -1;
 
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
@@ -51,6 +53,13 @@ public class TodoActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
         txtThoiHan.setText(sdf1.format(calendar.getTime()));
         txtThoiGian.setText(sdf2.format(calendar.getTime()));
+
+        //Hiển thị khi nhấn chỉnh sửa
+        txtTenCongViec.setText(getIntent().getStringExtra("chinhSuaTenCongViec"));
+        txtMoTaCongViec.setText(getIntent().getStringExtra("chinhSuaMoTaCongViec"));
+        txtThoiHan.setText(getIntent().getStringExtra("chinhSuaThoiHan"));
+        txtThoiGian.setText(getIntent().getStringExtra("chinhSuaThoiGian"));
+
     }
 
     private void addEvents() {
@@ -78,11 +87,14 @@ public class TodoActivity extends AppCompatActivity {
     }
 
     private void xuLyLuuToDo() {
+        int pos = getIntent().getIntExtra("viTri", 0);
+
         Intent intent = new Intent(TodoActivity.this, MainActivity.class);
         intent.putExtra("tenCongViec", txtTenCongViec.getText().toString());
         intent.putExtra("moTaCongViec", txtMoTaCongViec.getText().toString());
         intent.putExtra("thoiHan", txtThoiHan.getText().toString());
         intent.putExtra("thoiGian", txtThoiGian.getText().toString());
+        intent.putExtra("viTriSua", pos);
         setResult(13, intent); // mã này cũng tùy ý
         finish(); //đóng màn hình lại
     }
@@ -130,4 +142,5 @@ public class TodoActivity extends AppCompatActivity {
     public void Huy(View view) {
         finish();
     }
+
 }

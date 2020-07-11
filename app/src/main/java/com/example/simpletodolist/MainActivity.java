@@ -11,8 +11,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.adapter.TodoAdapter;
 import com.example.model.Todo;
@@ -20,7 +22,7 @@ import com.example.model.Todo;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    int id = -1;
     Button btnThem;
 
     ListView lvTodo;
@@ -53,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 xuLyLayKetQua();
             }
         });
+        lvTodo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //id = position;
+                //Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void xuLyLayKetQua() {
@@ -78,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if(resultCode == 13 && requestCode == 99){
             String tenCongViec = data.getStringExtra("tenCongViec");
             String moTaCongViec = data.getStringExtra("moTaCongViec");
@@ -86,6 +96,18 @@ public class MainActivity extends AppCompatActivity {
 
             Todo todo = new Todo(tenCongViec, moTaCongViec, thoiHan, thoiGian);
             dsTodo.add(todo);
+            todoAdapter.notifyDataSetChanged();
+        }
+
+        if(resultCode == 13 && requestCode == 98){ //xu ly phan sua thong tin
+            String tenCongViec = data.getStringExtra("tenCongViec");
+            String moTaCongViec = data.getStringExtra("moTaCongViec");
+            String thoiHan = data.getStringExtra("thoiHan");
+            String thoiGian = data.getStringExtra("thoiGian");
+            int vitri = data.getIntExtra("viTriSua", 0);
+
+            Todo todo2 = new Todo(tenCongViec, moTaCongViec, thoiHan, thoiGian);
+            dsTodo.set(vitri, todo2);
             todoAdapter.notifyDataSetChanged();
         }
     }
