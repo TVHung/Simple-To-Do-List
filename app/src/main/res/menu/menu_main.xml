@@ -8,4 +8,8 @@
         android:id="@+id/menuNgonNgu"
         android:title="@string/language">
     </item>
+    <item
+        android:id="@+id/menuSapxep"
+        android:title="@string/sort">
+    </item>
 </menu>

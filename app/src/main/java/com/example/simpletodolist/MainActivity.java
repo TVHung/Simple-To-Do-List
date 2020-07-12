@@ -14,12 +14,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import java.util.*;
 import android.widget.Toast;
-
 import com.example.adapter.TodoAdapter;
 import com.example.model.Todo;
-
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     int id = -1;
@@ -58,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         lvTodo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //id = position;
                 //Toast.makeText(MainActivity.this, "Hello", Toast.LENGTH_LONG).show();
             }
         });
@@ -80,6 +80,18 @@ public class MainActivity extends AppCompatActivity {
         if(item.getItemId() == R.id.menuThongTin){
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
+        }
+        if(item.getItemId() == R.id.menuNgonNgu){
+
+        }
+        if(item.getItemId() == R.id.menuSapxep){
+            Collections.sort(dsTodo, new Comparator<Todo>() {
+                @Override
+                public int compare(Todo o1, Todo o2) {
+                    return o1.getThoiHan().compareTo(o2.getThoiHan());
+                }
+            });
+            todoAdapter.notifyDataSetChanged(); //reload lại mang de sap xep
         }
         return super.onOptionsItemSelected(item);
     }

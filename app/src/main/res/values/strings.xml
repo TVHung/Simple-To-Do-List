@@ -12,6 +12,7 @@
     <string name="cancel">Hủy</string>
     <string name="about">Thông tin</string>
     <string name="language">Ngôn ngữ</string>
+    <string name="sort" translatable="false">Sắp xếp theo ngày</string>
     <string name="app_version">Phiên bản: 1.0</string>
     <string name="contact_me">Bạn có thể liên lạc với tôi theo </string>
     <string name="made_by">Được thực hiện bởi Trương Hùng</string>
