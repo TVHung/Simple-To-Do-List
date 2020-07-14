@@ -18,14 +18,14 @@ import java.util.*;
 import android.widget.Toast;
 import com.example.adapter.TodoAdapter;
 import com.example.model.Todo;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
-    int id = -1;
-    Button btnThem;
-
+    FloatingActionButton fabAdd;
     ListView lvTodo;
     ArrayList<Todo> dsTodo;
     TodoAdapter todoAdapter;
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addControllers() {
-        btnThem = findViewById(R.id.btnThem);
+        fabAdd = findViewById(R.id.fabAdd);
         lvTodo = findViewById(R.id.lvTodo);
 
         lvTodo = findViewById(R.id.lvTodo);
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
-        btnThem.setOnClickListener(new View.OnClickListener() {
+        fabAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 xuLyLayKetQua();
