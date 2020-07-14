@@ -19,5 +19,6 @@
     <string name="night_mode">Chế độ ban đêm</string>
     <string name="night_mode_on_summary">Chế độ ban đêm đã bật</string>
     <string name="night_mode_off_summary">Chế độ ban đêm đã tắt</string>
+    <string name="enter_null" translatable="false">Bạn chưa nhập tên công việc</string>
     <string name="email_address" translatable="false">truonghungvatvo@gmail.com</string>
 </resources>

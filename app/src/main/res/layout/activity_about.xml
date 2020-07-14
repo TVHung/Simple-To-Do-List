@@ -57,10 +57,9 @@
 
     <Button
         android:id="@+id/btnXong"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="370dp"
-        android:layout_marginLeft="140dp"
+        android:layout_marginTop="350dp"
         android:text="Xong" />
 
 </LinearLayout>

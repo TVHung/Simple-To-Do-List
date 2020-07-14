@@ -4,10 +4,10 @@
         android:id="@+id/menuThongTin"
         android:title="@string/about">
     </item>
-    <item
-        android:id="@+id/menuNgonNgu"
-        android:title="@string/language">
-    </item>
+<!--    <item-->
+<!--        android:id="@+id/menuNgonNgu"-->
+<!--        android:title="@string/language">-->
+<!--    </item>-->
     <item
         android:id="@+id/menuSapxep"
         android:title="@string/sort">

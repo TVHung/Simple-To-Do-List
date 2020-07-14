@@ -1,8 +1,7 @@
 package com.example.simpletodolist;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -14,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.model.Todo;
 
@@ -25,7 +25,6 @@ public class TodoActivity extends AppCompatActivity {
     TextView txtThoiHan, txtThoiGian;
     ImageButton btnThoiHan, btnThoiGian;
     Button btnXong, btnHuy;
-    int position = -1;
 
     Calendar calendar = Calendar.getInstance();
     SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
@@ -87,16 +86,20 @@ public class TodoActivity extends AppCompatActivity {
     }
 
     private void xuLyLuuToDo() {
-        int pos = getIntent().getIntExtra("viTri", 0);
+        if(txtTenCongViec.getText().toString().equalsIgnoreCase("")){
+            Toast.makeText(this, "Bạn phải nhập tên công việc", Toast.LENGTH_SHORT).show();
+        }else{
+            int pos = getIntent().getIntExtra("viTri", 0);
 
-        Intent intent = new Intent(TodoActivity.this, MainActivity.class);
-        intent.putExtra("tenCongViec", txtTenCongViec.getText().toString());
-        intent.putExtra("moTaCongViec", txtMoTaCongViec.getText().toString());
-        intent.putExtra("thoiHan", txtThoiHan.getText().toString());
-        intent.putExtra("thoiGian", txtThoiGian.getText().toString());
-        intent.putExtra("viTriSua", pos);
-        setResult(13, intent); // mã này cũng tùy ý
-        finish(); //đóng màn hình lại
+            Intent intent = new Intent(TodoActivity.this, MainActivity.class);
+            intent.putExtra("tenCongViec", txtTenCongViec.getText().toString());
+            intent.putExtra("moTaCongViec", txtMoTaCongViec.getText().toString());
+            intent.putExtra("thoiHan", txtThoiHan.getText().toString());
+            intent.putExtra("thoiGian", txtThoiGian.getText().toString());
+            intent.putExtra("viTriSua", pos);
+            setResult(13, intent); // mã này cũng tùy ý
+            finish(); //đóng màn hình lại
+        }
     }
 
     private void xuLyTheHienDatePicker() {

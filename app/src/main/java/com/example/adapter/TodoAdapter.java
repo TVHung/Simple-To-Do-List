@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -44,6 +46,7 @@ public class TodoAdapter extends ArrayAdapter<Todo> {
         TextView txtMoTaCongViec = row.findViewById(R.id.txtMoTaCongViec);
         TextView txtThoiHan = row.findViewById(R.id.txtThoiHan);
         TextView txtThoiGian = row.findViewById(R.id.txtThoiGian);
+        CheckBox cbXong = row.findViewById(R.id.cbXong);
         ImageButton btnChinhSua = row.findViewById(R.id.btnChinhSua);
         ImageButton btnXoa = row.findViewById(R.id.btnXoa);
 
@@ -52,6 +55,13 @@ public class TodoAdapter extends ArrayAdapter<Todo> {
         //txtMoTaCongViec.setText(todo.getMoTaCongViec());
         txtThoiHan.setText(todo.getThoiHan());
         txtThoiGian.setText(todo.getThoiGian());
+
+        cbXong.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                xuLyCheckCongViec(todo, isChecked);
+            }
+        });
 
         btnChinhSua.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +81,13 @@ public class TodoAdapter extends ArrayAdapter<Todo> {
         return row;
     }
 
+    private void xuLyCheckCongViec(Todo todo, boolean isChecked) {
+        if (isChecked){
+            Toast.makeText(context, "Hoàn thành", Toast.LENGTH_SHORT).show();
+        }else{
+
+        }
+    }
 
 
     private void xuLyChinhSua(Todo todo, int position) {

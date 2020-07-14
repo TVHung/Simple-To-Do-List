@@ -81,9 +81,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, AboutActivity.class);
             startActivity(intent);
         }
-        if(item.getItemId() == R.id.menuNgonNgu){
-
-        }
+//        if(item.getItemId() == R.id.menuNgonNgu){
+//
+//        }
         if(item.getItemId() == R.id.menuSapxep){
             Collections.sort(dsTodo, new Comparator<Todo>() {
                 @Override
